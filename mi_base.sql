@@ -8,11 +8,11 @@ CREATE TABLE Cliente (
     dni INT(8) ,
     numero INT(10),
 )
-CREATE TABLE Empledo (
+CREATE TABLE Empleado (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
-    fecha-de-nacimiento DATETIME,
+    nacimiento DATE,
     dni INT(8) ,
     numero INT(10),
 )
@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS venta (
     empleado_id INT,HJOP
     estado_actual VARCHAR(200),
     servicio VARCHAR(200),
-    fecha_entrada DATETIME,
-    fecha_entrega_estimada DATETIME,
+    fecha_entrada DATE,
+    fecha_entrega_estimada DATE,
     FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE SET NULL,
     FOREIGN KEY (empleado_id) REFERENCES empleado(id) ON DELETE SET NULL
 );
