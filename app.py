@@ -4,10 +4,12 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Cadena de conexión a MySQL usando PyMySQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://morenasalamonini:S4lam0nini@%/mi_base'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://morenasalamonini:S4lam0nini@localhost:3306/mi_base'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+
 db = SQLAlchemy(app)
+
 
 # Modelo de tabla
 class Cliente(db.Model):
@@ -46,3 +48,19 @@ class venta(db.Model):
 cliente = db.relationship('Cliente', backref=db.backref('venta', lazy=True))
 empleado = db.relationship('Empleado', backref=db.backref('venta', lazy=True))
 cuadro = db.relationship('cuadro', backref=db.backref('venta', lazy=True))
+
+@app.route('/')
+def Inicio():
+    return render_template('index.html')
+@app.route('/clientes')
+def Contactos():
+    return render_template('clientes.html')
+@app.route('/empleados')
+def Empleados():
+    return render_template('empleados.html')
+@app.route('/cuadros')
+def Cuadros():
+    return render_template('cuadros.html')
+if __name__ == '__main__':
+    app.run(debug=True)
+
