@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Cadena de conexión a MySQL usando PyMySQL
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:123456@localhost:3306/mi_base'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://morenasalamonini:S4lam0nini@%/mi_base'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -42,3 +42,5 @@ class venta(db.Model):
     servicio = db.Column(db.String(200) )
     fecha_entrada = db.Column(db.Date )
     fecha_entrega_estimada = db.Column(db.Date)
+cliente = db.relationship('Cliente', backref=db.backref('cuadros', lazy=True))
+empleado = db.relationship('Empleado', backref=db.backref('cuadros', lazy=True))
