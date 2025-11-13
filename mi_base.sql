@@ -27,11 +27,13 @@ CREATE TABLE CUADRO (
 CREATE TABLE IF NOT EXISTS venta (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cliente_id INT,
-    empleado_id INT,HJOP
+    empleado_id INT,
+    CUADRO_id INT,
     estado_actual VARCHAR(200),
     servicio VARCHAR(200),
     fecha_entrada DATE,
     fecha_entrega_estimada DATE,
     FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE SET NULL,
-    FOREIGN KEY (empleado_id) REFERENCES empleado(id) ON DELETE SET NULL
+    FOREIGN KEY (empleado_id) REFERENCES empleado(id) ON DELETE SET NULL,
+    FOREIGN KEY (CUADRO_id) REFERENCES CUADRO(id) ON DELETE SET NULL
 );
