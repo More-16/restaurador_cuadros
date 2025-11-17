@@ -1,0 +1,44 @@
+body {
+    background-color: #dddd8f;
+    color: #000000;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman';
+}
+.navbar {
+    background-color: #dddd8f;
+}
+.navbar a {
+    color: #000000;
+}
+.navbar a:hover {
+    background-color: #dddd8f;
+    border-radius: 5px;
+}
+.container {
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+h1, h2 {
+    color: #dddd8f;
+}
+form {
+    max-width: 600px;
+    margin: none;
+}
+
+button[type="submit"] {
+    background-color: #dddd8f; /* Color rosa */
+    color: rgb(0, 0, 0);          
+    border: none;           
+    padding: 10px 20px;      
+    border-radius: 5px;    
+    cursor: pointer;        
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #afaf52; /* Color rojo oscuro al pasar el mouse */
+}

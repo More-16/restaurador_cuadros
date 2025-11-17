@@ -50,17 +50,22 @@ empleado = db.relationship('Empleado', backref=db.backref('venta', lazy=True))
 cuadro = db.relationship('cuadro', backref=db.backref('venta', lazy=True))
 
 @app.route('/')
-def Inicio():
-    return render_template('index.html')
+def home():
+    return render_template('home.html')
 @app.route('/clientes')
-def Contactos():
+def clientes():
     return render_template('clientes.html')
 @app.route('/empleados')
-def Empleados():
+def empleados():
     return render_template('empleados.html')
 @app.route('/cuadros')
-def Cuadros():
+def cuadros():
     return render_template('cuadros.html')
+@app.route('/ventas')
+def ventas():
+    return render_template('ventas.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 
