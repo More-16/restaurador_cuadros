@@ -5,13 +5,13 @@ body {
     font-family: Georgia, 'Times New Roman';
 }
 .navbar {
-    background-color: #dddd8f;
+    background-color: #bc4749;
 }
 .navbar a {
     color: #000000;
 }
 .navbar a:hover {
-    background-color: #dddd8f;
+    background-color: #f2e8cf;
     border-radius: 5px;
 }
 .container {
@@ -36,7 +36,7 @@ button[type="submit"] {
     padding: 10px 20px;      
     border-radius: 5px;    
     cursor: pointer;        
-    transition: background 0.3s;
+    transition: 0.3s;
 }
 
 button[type="submit"]:hover {
